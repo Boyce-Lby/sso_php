@@ -24,7 +24,7 @@ class Common{
      * 自定义实现json_encode功能的函数
      * @param mixed $data
      */
-    static public function onmpw_json_encode($data){
+    static public function lby_json_encode($data){
         if(is_object($data)) return false;
         if(is_array($data)){
             $data = self::deal_array($data);

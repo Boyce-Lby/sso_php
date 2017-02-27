@@ -110,8 +110,9 @@
 	    			data:{id:1},
 	    			success:function(data){
 	    				if(data.logout == 'SUC'){
-	    					args.logout(data);
+	    					// args.logout(data);
 	    				}
+	    				args.Suc();
 	    			},
 	    			error:function(err){
 	    				console.log(err);

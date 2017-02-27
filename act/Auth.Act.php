@@ -7,9 +7,6 @@
 namespace act;
 class Auth{
     private $urlArr = array(
-        'http://site1.me',
-        'http://site2.me',
-        'http://sso.me',
         'http://client.me',
         'http://client1.me'
     );

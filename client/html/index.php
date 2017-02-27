@@ -10,29 +10,31 @@
 <script type="text/javascript" src="http://text.me/Common.js"></script>
 <script type="text/javascript">
 	$(function(){
-		Onmpw_SSO.checkLogin({
+		LBY_SSO.checkLogin({
 			Fail:function(){
 				$("#login").show();
 			},
 			Suc:function(){
-				$.ajax({
-					url:'/getinfo.php',
-					dataType:'json',
-					type:'post',
-					data:{sessionId:111},
-					success:function(data){
-						$("#userinfo").show();
-					},
-					error:function(err){
-						console.log(err);
-					}
-				})
+				//验证成功获取用户数据
+				// $.ajax({
+				// 	url:'/getinfo.php',
+				// 	dataType:'json',
+				// 	type:'post',
+				// 	data:{sessionId:111},
+				// 	success:function(data){
+				// 		$("#userinfo").show();
+				// 	},
+				// 	error:function(err){
+				// 		console.log(err);
+				// 	}
+				// })
+				$("#userinfo").show();
 			},
 			setSession_Url:'/auth.php',
 		});
 
 		$(".login").click(function(){
-			Onmpw_SSO.Login({
+			LBY_SSO.Login({
 				Login_Url: '/login.php',
 				Fail: function(){
 					$("#login").show();
@@ -45,22 +47,25 @@
 			});
 		});
 		$(".logout").click(function(){
-			Onmpw_SSO.Logout({
-				logout:function(data){
-					$.ajax({
-						url:'/logout.php',
-						dataType:'json',
-						type:'post',
-						data:{sessionId:data.sessionId},
-						success:function(data){
-							if(data.logout == 'SUC'){
-								location.reload();
-							}
-						},
-						error:function(err){
-							console.log(err);
-						}
-					})
+			LBY_SSO.Logout({
+				// logout:function(data){
+				// 	$.ajax({
+				// 		url:'/logout.php',
+				// 		dataType:'json',
+				// 		type:'post',
+				// 		data:{sessionId:data.sessionId},
+				// 		success:function(data){
+				// 			if(data.logout == 'SUC'){
+				// 				location.reload();
+				// 			}
+				// 		},
+				// 		error:function(err){
+				// 			console.log(err);
+				// 		}
+				// 	})
+				// }
+				Suc:function(){
+					location.reload();
 				}
 				
 			})
